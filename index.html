@@ -1,41 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wiltshire Website Builders</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Professional, fast, and modern websites for Wiltshire businesses. Web design, branding, SEO." />
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
-<body>
-  <header>
-    <h1>Wiltshire Website Builders</h1>
-    <p>Clean, Fast, Modern Websites for Wiltshire Businesses</p>
+<body class="theme-light">
+  <header class="header" role="banner">
+    <div class="header__container">
+      <h1 class="header__title">Wiltshire Website Builders</h1>
+      <p class="header__subtitle">Clean, Fast, Modern Websites for Wiltshire Businesses</p>
+      <button id="theme-toggle" class="btn btn--toggle" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">🌙</button>
+    </div>
   </header>
 
-  <section class="services">
-    <h2>What We Offer</h2>
-    <div class="service-card">
-      <h3>Website Design</h3>
-      <p>Beautiful, mobile-optimised, fast-loading sites built in days — from £50.</p>
-    </div>
-    <div class="service-card">
-      <h3>Custom Branding</h3>
-      <p>Logos, business cards, and social media design packages.</p>
-    </div>
-    <div class="service-card">
-      <h3>SEO Setup</h3>
-      <p>Basic SEO for better Google ranking and local reach.</p>
-    </div>
-  </section>
+  <main class="main-content" role="main">
+    <section class="services" aria-labelledby="services-title">
+      <h2 id="services-title" class="services__title">What We Offer</h2>
+      <div class="services__list">
+        <article class="service-card" tabindex="0" aria-labelledby="service1-title">
+          <h3 id="service1-title" class="service-card__title">Website Design</h3>
+          <p class="service-card__desc">Beautiful, mobile-optimised, fast-loading sites built in days — from £50.</p>
+        </article>
+        <article class="service-card" tabindex="0" aria-labelledby="service2-title">
+          <h3 id="service2-title" class="service-card__title">Custom Branding</h3>
+          <p class="service-card__desc">Logos, business cards, and social media design packages.</p>
+        </article>
+        <article class="service-card" tabindex="0" aria-labelledby="service3-title">
+          <h3 id="service3-title" class="service-card__title">SEO Setup</h3>
+          <p class="service-card__desc">Basic SEO for better Google ranking and local reach.</p>
+        </article>
+      </div>
+    </section>
 
-  <section class="cta">
-    <h2>Ready to build yours?</h2>
-    <p>Contact us today for a fast quote — no commitment.</p>
-    <a href="tel:07907102897" class="btn">📞 07907 102897</a>
-  </section>
+    <section class="cta" aria-label="Call to action">
+      <h2 class="cta__title">Ready to build yours?</h2>
+      <p class="cta__desc">Contact us today for a fast quote — no commitment.</p>
+      <a href="tel:07907102897" class="btn btn--primary" aria-label="Call Wiltshire Website Builders">📞 07907 102897</a>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Wiltshire Website Builders. Built with clean code in the UK 🇬🇧</p>
+    <section class="booking" aria-labelledby="booking-title">
+      <h2 id="booking-title">Book a Call</h2>
+      <form id="booking-form" class="booking__form" novalidate>
+        <label for="name-book">Name</label>
+        <input type="text" id="name-book" name="name" required minlength="2" placeholder="Your name" />
+
+        <label for="email-book">Email</label>
+        <input type="email" id="email-book" name="email" required placeholder="you@example.com" />
+
+        <label for="date-book">Date</label>
+        <input type="date" id="date-book" name="date" required min="" />
+
+        <label for="time-book">Time Slot</label>
+        <select id="time-book" name="time" required>
+          <option value="">Select a time</option>
+          <option value="18:00">6:00 PM</option>
+          <option value="18:30">6:30 PM</option>
+          <option value="19:00">7:00 PM</option>
+          <option value="19:30">7:30 PM</option>
+          <option value="20:00">8:00 PM</option>
+          <option value="20:30">8:30 PM</option>
+        </select>
+
+        <button type="submit" class="btn btn--primary btn--full">Book Call</button>
+      </form>
+      <div id="booking-status" role="alert" aria-live="polite" class="form-status"></div>
+    </section>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="contact__title">Get in Touch</h2>
+      <form id="contact-form" class="contact__form" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            minlength="2"
+            aria-describedby="name-error"
+            placeholder="Your name"
+          />
+          <span class="form-error" id="name-error" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            aria-describedby="email-error"
+            placeholder="you@example.com"
+          />
+          <span class="form-error" id="email-error" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            minlength="10"
+            aria-describedby="message-error"
+            placeholder="Tell us about your project"
+          ></textarea>
+          <span class="form-error" id="message-error" aria-live="polite"></span>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+      </form>
+      <div id="form-status" role="alert" aria-live="polite" class="form-status"></div>
+    </section>
+  </main>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">⬆️</button>
+
+  <footer class="footer" role="contentinfo">
+    <p>© 2025 Wiltshire Website Builders. Built with clean code in the UK 🇬🇧</p>
   </footer>
 </body>
 </html>
